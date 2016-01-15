@@ -429,10 +429,12 @@ module.exports = React.createClass({
             </ScrollView>
          );
       return (
-         <ViewPagerAndroid ref="scrollView"
-            style={{flex: 1}}>
-            {pages}
-         </ViewPagerAndroid>
+        <ViewPagerAndroid
+                ref="scrollView"
+                style={{flex: 1}}
+                onPageSelected={e => this.setState({index: e.nativeEvent.position})}>
+          {pages}
+        </ViewPagerAndroid>
       );
   },
   /**
